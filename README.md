@@ -1,3 +1,4 @@
 # paws-and-reflect
 
-hihihihihihihi
+hihihihihihihii
+<https://media.tenor.com/w_xkJNZpzhgAAAAM/goofy.gif>
