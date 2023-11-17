@@ -1,1 +1,39 @@
+# General Python ignores
+*.py[cod]
+__pycache__/
+*.pyc
+*.pyo
+
+# pyenv local version (uncomment if you want to ignore)
+# .python-version
+
+# Virtualenv
+venv/
+ENV/
+
+# IDE/Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Build artifacts
+/dist/
+/build/
+/eggs/
+.egg-info/
+.eggs/
+parts/
+bin/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+*.egg
+instance/
+*.manifest
+*.spec
+
+# Other files and folders to ignore
 .DS_Store
+Thumbs.db
