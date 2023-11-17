@@ -1,4 +1,4 @@
 # paws-and-reflect
 
 hihihihihihihii
-<https://media.tenor.com/w_xkJNZpzhgAAAAM/goofy.gif>
+<img src="https://media.tenor.com/w_xkJNZpzhgAAAAM/goofy.gif" width="40" height="40">
