@@ -1,25 +1,23 @@
-# Define shell
-SHELL := /bin/zsh
+# Makefile for managing Python virtual environment and dependencies
 
-# Makefile targets
-.PHONY: install-virtualenv activate-venv install-dependencies deactivate-venv freeze-dependencies
+# Rule to create and activate virtual environment
+bin/activate: requirements.txt
+	python3 -m venv .
+	./bin/pip install -r requirements.txt
 
-# Install virtualenv
+# Rule to run the application using the virtual environment
+run: bin/activate
+	./bin/python3 app.py
+
+# Rule to clean up __pycache__ and the virtual environment
+clean:
+	rm -rf __pycache__
+	rm -rf bin lib lib64 include pyvenv.cfg
+
+# Rule to install virtualenv globally (if not already installed)
 install-virtualenv:
-	@pip install virtualenv
+	pip install virtualenv
 
-# Activate virtual environment
-activate-venv:
-	@source ./bin/activate
-
-# Install project dependencies
-install-dependencies:
-	@pip install -r requirements.txt
-
-# Deactivate virtual environment
-deactivate-venv:
-	@deactivate
-
-# Freeze dependencies into requirements.txt
+# Rule to freeze dependencies into requirements.txt
 freeze-dependencies:
-	@pip freeze -l > requirements.txt
+	./bin/pip freeze -l > requirements.txt

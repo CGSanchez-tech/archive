@@ -10,31 +10,24 @@ To streamline the setup and management of the project, you can use the provided 
 ### Makefile Commands
 
 - **Install Virtualenv**:
-  Installs virtualenv if it's not already installed.
+  Installs virtualenv globally if it's not already installed.
 
   ```bash
   make install-virtualenv
   ```
 
-- **Activate Virtual Environment**:
-  Activates the Python virtual environment. Note: This needs to be done directly in the shell for it to persist.
-
-  ```bash
-  source ./bin/activate
-  ```
-
 - **Install Dependencies**:
-  Installs the required dependencies for the project.
+  Creates the virtual environment in the project root and installs required dependencies.
 
   ```bash
-  make install-dependencies
+  make bin/activate
   ```
 
-- **Deactivate Virtual Environment**:
-  Deactivates the Python virtual environment. This should be run directly in the shell.
+- **Run the Application**:
+  Runs the application using the virtual environment.
 
   ```bash
-  deactivate
+  make run
   ```
 
 - **Freeze Dependencies**:
@@ -42,6 +35,13 @@ To streamline the setup and management of the project, you can use the provided 
 
   ```bash
   make freeze-dependencies
+  ```
+
+- **Clean Up**:
+  Removes virtual environment and `__pycache__` directories.
+
+  ```bash
+  make clean
   ```
 
 ### Manual Setup
@@ -54,9 +54,10 @@ If you prefer not using Makefile commands, follow these steps:
 pip install virtualenv
 ```
 
-#### Activate Virtualenv
+#### Create Virtualenv and Activate
 
 ```bash
+python3 -m venv .
 source ./bin/activate
 ```
 
@@ -66,14 +67,20 @@ source ./bin/activate
 pip install -r requirements.txt
 ```
 
-#### Exit Virtualenv
+#### Run the Application
 
 ```bash
-deactivate
+python3 app.py
 ```
 
 #### Freeze Dependencies
 
 ```bash
 pip freeze -l > requirements.txt
+```
+
+#### Exit Virtualenv
+
+```bash
+deactivate
 ```
