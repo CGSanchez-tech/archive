@@ -17,8 +17,8 @@ pip install virtualenv
 ### Create Virtualenv and Activate
 
 ```bash
-python3 -m venv .
-source ./bin/activate
+python3.11 -m venv venv
+source ./venv/bin/activate
 ```
 
 ### Install Dependencies
