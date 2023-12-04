@@ -15,11 +15,6 @@ from IPython.display import display, Image
 from keras.layers import BatchNormalization
 from keras.callbacks import EarlyStopping
 
-
-
-#
-#
-
 print("yippie")
 
 #cell1
@@ -56,13 +51,15 @@ happy_labels = [0] * len(happy_images)
 sad_labels = [1] * len(sad_images)
 angry_labels = [2] * len(angry_images)
 
+print("")
 print("Labels Made")
-
-#cell2
+print("")
 end_cell1 = time.time()
 elapsed_time1 = end_cell1 - start_cell1
 print(f"Time taken for block 1: {elapsed_time1} seconds")
-
+print("")
+#cell2
+start_cell2 = time.time()
 # Concatenate images and labels
 X = np.array(happy_images + sad_images + angry_images)
 y = np.array(happy_labels + sad_labels + angry_labels)
@@ -129,6 +126,12 @@ print(model.summary())
 
 #size = get_file_size(file_path2)
 #print(size)
+
+print("")
+end_cell2 = time.time()
+elapsed_time2 = end_cell2 - start_cell2
+print(f"Time taken for block 1: {elapsed_time2} seconds")
+print("")
 
 # Compile the model with class weights
 model.compile(loss='categorical_crossentropy', optimizer="Adam", metrics=['accuracy']) 
