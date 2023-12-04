@@ -1,6 +1,6 @@
-##cell1
 import os
 import cv2
+import time 
 import numpy as np
 #issues: matplotlib needed to be installed again
 #pip install matplotlib
@@ -16,9 +16,15 @@ from keras.layers import BatchNormalization
 from keras.callbacks import EarlyStopping
 
 
+
+#
+#
+
 print("yippie")
 
-##cell2
+#cell1
+start_cell1 = time.time()
+
 # Define the path to the dataset folders
 happy_folder = "./Happy"
 sad_folder = "./Sad"
@@ -50,6 +56,12 @@ happy_labels = [0] * len(happy_images)
 sad_labels = [1] * len(sad_images)
 angry_labels = [2] * len(angry_images)
 
+print("Labels Made")
+
+#cell2
+end_cell1 = time.time()
+elapsed_time1 = end_cell1 - start_cell1
+print(f"Time taken for block 1: {elapsed_time1} seconds")
 
 # Concatenate images and labels
 X = np.array(happy_images + sad_images + angry_images)
@@ -92,6 +104,7 @@ model.add(Dense(512, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(3, activation='softmax'))
 
+print("Model Summary time")
 print(model.summary())
 
 #print("######################")
@@ -137,6 +150,7 @@ losstr, accuracytr = model.evaluate(X_train.reshape(-1, 48, 48, 1), y_train)
 
 # Save the trained model
 model.save("facial_expression_model.h5")
+print("Trained model saved")
 
 ###Cell 5
 
@@ -149,7 +163,7 @@ from keras.models import load_model
 # Load the saved model
 loaded_model = load_model("facial_expression_model.h5")
 
-
+print("Loading and preprocessing images...")
 
 # Function to load and preprocess images
 def load_images_from_folder(folder):
@@ -162,9 +176,10 @@ def load_images_from_folder(folder):
             images.append(img)
     return images
 
-
+print("Testing an image")
 # Load a custom test image
-custom_test_image_path = "/kaggle/input/pets-facial-expression-dataset/Angry/16924834.jpg"
+# Make this into a command in the terminal
+custom_test_image_path = "./Angry/16924834.jpg"
 
 custom_test_image = cv2.imread(custom_test_image_path)
 custom_test_image = cv2.cvtColor(custom_test_image, cv2.COLOR_BGR2GRAY)
