@@ -1,5 +1,5 @@
 For the main file app.py, the biggest hurdle was running the boiler plate correctly, it
-was a little old and did not come with a read me. 
+was a little and did not come with a read me. 
 
 We ended up using a virtual environment to create an isolated space where dependences and 
 packages are consistent, and we were able to work with the given code and dataset.
@@ -17,6 +17,9 @@ in a virtual environment, so we just put that idea aside. Most of the running ti
 wasn't even during that loading time. 
 
 Moved on to prompting a user for input...
+
+
+
 
 Links:
 Tensor flow install: https://www.tensorflow.org/install
