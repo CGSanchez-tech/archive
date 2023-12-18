@@ -1,8 +1,5 @@
 <div style="display: flex; justify-content: center;">
   <h1> Paws & Reflect </h1>
-</div>
-
-<div style="display: flex; justify-content: center;">
   <img src="https://media.tenor.com/w_xkJNZpzhgAAAAM/goofy.gif" width="80" height="80">
 </div>
 
@@ -27,6 +24,9 @@ source ./venv/bin/activate
 pip install -r requirements.txt
 ```
 
+**Note:** Some libraries, particularly TensorFlow, might require manual installation within the virtual environment due to specific compatibility needs.
+If you encounter any installation issues, try installing these libraries separately using pip install.
+
 ### Run the Application
 
 ```bash
@@ -34,6 +34,8 @@ python3 app.py
 ```
 
 ### Freeze Dependencies
+
+To capture the current state of the virtual environment, run the following command:
 
 ```bash
 pip freeze -l > requirements.txt
