@@ -46,3 +46,7 @@ pip freeze -l > requirements.txt
 ```bash
 deactivate
 ```
+
+### Acknowledgements
+
+[Kaggle Dataset](https://www.kaggle.com/datasets/anshtanwar/pets-facial-expression-dataset)
