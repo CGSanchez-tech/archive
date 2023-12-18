@@ -33,6 +33,12 @@ If you encounter any installation issues, try installing these libraries separat
 python3 app.py
 ```
 
+### Run the Pre-Trained Model
+
+```bash
+python3 test.py
+```
+
 ### Freeze Dependencies
 
 To capture the current state of the virtual environment, run the following command:
