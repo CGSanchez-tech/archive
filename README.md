@@ -27,7 +27,7 @@ pip install -r requirements.txt
 **Note:** Some libraries, particularly TensorFlow, might require manual installation within the virtual environment due to specific compatibility needs.
 If you encounter any installation issues, try installing these libraries separately using pip install.
 
-### Run the Application
+### Train the Model
 
 ```bash
 python3 app.py
